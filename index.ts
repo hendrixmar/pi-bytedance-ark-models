@@ -4,10 +4,10 @@ import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
 const TEN_YEARS_MS = 10 * 365 * 24 * 60 * 60 * 1000;
 
 const BYTEDANCE_ARK_MODELS = [
-	// Doubao Seed Models
+	// Ark Code Model
 	{
-		id: "doubao-seed-2.0-code",
-		name: "Doubao Seed 2.0 Code",
+		id: "byteplus-plan/ark-code-latest",
+		name: "Ark Code Latest",
 		reasoning: false,
 		input: ["text"] as const,
 		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
@@ -22,61 +22,10 @@ const BYTEDANCE_ARK_MODELS = [
 			thinkingFormat: "standard"
 		}
 	},
+	// ByteDance Seed Code Model
 	{
-		id: "doubao-seed-2.0-pro",
-		name: "Doubao Seed 2.0 Pro",
-		reasoning: false,
-		input: ["text", "image"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 262_144,
-		maxTokens: 131_072,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
-	{
-		id: "doubao-seed-2.0-lite",
-		name: "Doubao Seed 2.0 Lite",
-		reasoning: false,
-		input: ["text", "image"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 262_144,
-		maxTokens: 131_072,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
-	{
-		id: "doubao-seed-code",
-		name: "Doubao Seed Code",
-		reasoning: false,
-		input: ["text"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 262_144,
-		maxTokens: 131_072,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
-	// MiniMax Model
-	{
-		id: "minimax-m2.5",
-		name: "MiniMax M2.5",
+		id: "byteplus-plan/bytedance-seed-code",
+		name: "ByteDance Seed Code",
 		reasoning: false,
 		input: ["text"] as const,
 		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
@@ -93,7 +42,7 @@ const BYTEDANCE_ARK_MODELS = [
 	},
 	// GLM Model
 	{
-		id: "glm-4.7",
+		id: "byteplus-plan/glm-4.7",
 		name: "GLM-4.7",
 		reasoning: false,
 		input: ["text"] as const,
@@ -109,27 +58,9 @@ const BYTEDANCE_ARK_MODELS = [
 			thinkingFormat: "standard"
 		}
 	},
-	// DeepSeek Model
-	{
-		id: "deepseek-v3.2",
-		name: "DeepSeek V3.2",
-		reasoning: false,
-		input: ["text"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 131_072,
-		maxTokens: 65_536,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
 	// Kimi Model
 	{
-		id: "kimi-k2.5",
+		id: "byteplus-plan/kimi-k2.5",
 		name: "Kimi K2.5",
 		reasoning: false,
 		input: ["text"] as const,
