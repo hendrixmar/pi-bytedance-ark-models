@@ -4,48 +4,15 @@ import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
 const TEN_YEARS_MS = 10 * 365 * 24 * 60 * 60 * 1000;
 
 const BYTEDANCE_ARK_MODELS = [
+	// Seed Models (VLM - Vision Language Models)
 	{
-		id: "doubao-1.5-pro-32k-250115",
-		name: "Doubao 1.5 Pro 32K",
+		id: "seed-2-0-pro-260328",
+		name: "Seed 2.0 Pro",
 		reasoning: false,
-		input: ["text", "image"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 32_768,
-		maxTokens: 4_096,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
-	{
-		id: "doubao-1.5-lite-32k-250115",
-		name: "Doubao 1.5 Lite 32K",
-		reasoning: false,
-		input: ["text", "image"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 32_768,
-		maxTokens: 4_096,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
-	{
-		id: "doubao-1.5-pro-256k-250115",
-		name: "Doubao 1.5 Pro 256K",
-		reasoning: false,
-		input: ["text", "image"] as const,
+		input: ["text", "image", "video"] as const,
 		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
 		contextWindow: 262_144,
-		maxTokens: 4_096,
+		maxTokens: 131_072,
 		compat: {
 			supportsDeveloperRole: true,
 			supportsReasoningEffort: false,
@@ -56,13 +23,81 @@ const BYTEDANCE_ARK_MODELS = [
 		}
 	},
 	{
-		id: "seed-1.6-flash-250615",
+		id: "seed-2-0-lite-260228",
+		name: "Seed 2.0 Lite",
+		reasoning: false,
+		input: ["text", "image", "video"] as const,
+		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+		contextWindow: 262_144,
+		maxTokens: 131_072,
+		compat: {
+			supportsDeveloperRole: true,
+			supportsReasoningEffort: false,
+			maxTokensField: "max_tokens",
+			requiresToolResultName: false,
+			requiresMistralToolIds: false,
+			thinkingFormat: "standard"
+		}
+	},
+	{
+		id: "seed-2-0-mini-260215",
+		name: "Seed 2.0 Mini",
+		reasoning: false,
+		input: ["text", "image", "video"] as const,
+		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+		contextWindow: 262_144,
+		maxTokens: 131_072,
+		compat: {
+			supportsDeveloperRole: true,
+			supportsReasoningEffort: false,
+			maxTokensField: "max_tokens",
+			requiresToolResultName: false,
+			requiresMistralToolIds: false,
+			thinkingFormat: "standard"
+		}
+	},
+	{
+		id: "seed-1-8-251228",
+		name: "Seed 1.8",
+		reasoning: false,
+		input: ["text", "image", "video"] as const,
+		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+		contextWindow: 262_144,
+		maxTokens: 65_536,
+		compat: {
+			supportsDeveloperRole: true,
+			supportsReasoningEffort: false,
+			maxTokensField: "max_tokens",
+			requiresToolResultName: false,
+			requiresMistralToolIds: false,
+			thinkingFormat: "standard"
+		}
+	},
+	{
+		id: "seed-1-6-250915",
+		name: "Seed 1.6",
+		reasoning: false,
+		input: ["text", "image", "video"] as const,
+		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+		contextWindow: 262_144,
+		maxTokens: 32_768,
+		compat: {
+			supportsDeveloperRole: true,
+			supportsReasoningEffort: false,
+			maxTokensField: "max_tokens",
+			requiresToolResultName: false,
+			requiresMistralToolIds: false,
+			thinkingFormat: "standard"
+		}
+	},
+	{
+		id: "seed-1-6-flash-250715",
 		name: "Seed 1.6 Flash",
 		reasoning: false,
-		input: ["text", "image"] as const,
+		input: ["text", "image", "video"] as const,
 		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 256_000,
-		maxTokens: 8_192,
+		contextWindow: 262_144,
+		maxTokens: 32_768,
 		compat: {
 			supportsDeveloperRole: true,
 			supportsReasoningEffort: false,
@@ -72,31 +107,15 @@ const BYTEDANCE_ARK_MODELS = [
 			thinkingFormat: "standard"
 		}
 	},
+	// DeepSeek Models
 	{
-		id: "seed-1.6-pro-250615",
-		name: "Seed 1.6 Pro",
-		reasoning: false,
-		input: ["text", "image"] as const,
-		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 256_000,
-		maxTokens: 8_192,
-		compat: {
-			supportsDeveloperRole: true,
-			supportsReasoningEffort: false,
-			maxTokensField: "max_tokens",
-			requiresToolResultName: false,
-			requiresMistralToolIds: false,
-			thinkingFormat: "standard"
-		}
-	},
-	{
-		id: "deepseek-v3-250324",
-		name: "DeepSeek V3",
+		id: "deepseek-v3-2-251201",
+		name: "DeepSeek V3.2",
 		reasoning: false,
 		input: ["text"] as const,
 		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 64_000,
-		maxTokens: 8_192,
+		contextWindow: 131_072,
+		maxTokens: 32_768,
 		compat: {
 			supportsDeveloperRole: true,
 			supportsReasoningEffort: false,
@@ -112,8 +131,8 @@ const BYTEDANCE_ARK_MODELS = [
 		reasoning: true,
 		input: ["text"] as const,
 		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-		contextWindow: 64_000,
-		maxTokens: 8_192,
+		contextWindow: 98_304,
+		maxTokens: 16_384,
 		compat: {
 			supportsDeveloperRole: true,
 			supportsReasoningEffort: false,
@@ -121,6 +140,42 @@ const BYTEDANCE_ARK_MODELS = [
 			requiresToolResultName: false,
 			requiresMistralToolIds: false,
 			thinkingFormat: "deepseek"
+		}
+	},
+	// GLM Models
+	{
+		id: "glm-4-7-251222",
+		name: "GLM-4.7",
+		reasoning: false,
+		input: ["text"] as const,
+		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+		contextWindow: 204_800,
+		maxTokens: 131_072,
+		compat: {
+			supportsDeveloperRole: true,
+			supportsReasoningEffort: false,
+			maxTokensField: "max_tokens",
+			requiresToolResultName: false,
+			requiresMistralToolIds: false,
+			thinkingFormat: "standard"
+		}
+	},
+	// Kimi Models
+	{
+		id: "kimi-k2-thinking-251104",
+		name: "Kimi K2 Thinking",
+		reasoning: true,
+		input: ["text"] as const,
+		cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+		contextWindow: 262_144,
+		maxTokens: 32_768,
+		compat: {
+			supportsDeveloperRole: true,
+			supportsReasoningEffort: false,
+			maxTokensField: "max_tokens",
+			requiresToolResultName: false,
+			requiresMistralToolIds: false,
+			thinkingFormat: "standard"
 		}
 	},
 ];
@@ -135,7 +190,7 @@ function createApiKeyCredentials(apiKey: string): Promise<OAuthCredentials> {
 
 export default function registerByteDanceArkProvider(pi: ExtensionAPI): void {
 	pi.registerProvider("ByteDance Ark", {
-		baseUrl: "https://ark.eu-west.bytepluses.com/api/v3",
+		baseUrl: "https://ark.ap-southeast.bytepluses.com/api/v3",
 		api: "openai-completions",
 		models: BYTEDANCE_ARK_MODELS,
 		oauth: {

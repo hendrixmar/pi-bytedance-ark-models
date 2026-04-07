@@ -1,18 +1,34 @@
 # Pi ByteDance Ark Models
 
-Adds ByteDance Ark **Doubao**, **Seed**, and **DeepSeek** models to Pi via the EU West endpoint.
+Adds ByteDance Ark **Seed**, **DeepSeek**, **GLM**, and **Kimi** models to Pi via the AP Southeast endpoint.
 
 ## Available Models
 
+### Seed Models (Multimodal)
 | Model | Context | Max Output | Reasoning |
 |------|--------|----------|------|
-| Doubao 1.5 Pro 32K | 32K | 4,096 | ❌ |
-| Doubao 1.5 Lite 32K | 32K | 4,096 | ❌ |
-| Doubao 1.5 Pro 256K | 256K | 4,096 | ❌ |
-| Seed 1.6 Flash | 256K | 8,192 | ❌ |
-| Seed 1.6 Pro | 256K | 8,192 | ❌ |
-| DeepSeek V3 | 64K | 8,192 | ❌ |
-| DeepSeek R1 | 64K | 8,192 | ✅ |
+| Seed 2.0 Pro | 256K | 131K | ❌ |
+| Seed 2.0 Lite | 256K | 131K | ❌ |
+| Seed 2.0 Mini | 256K | 131K | ❌ |
+| Seed 1.8 | 256K | 65K | ❌ |
+| Seed 1.6 | 256K | 32K | ❌ |
+| Seed 1.6 Flash | 256K | 32K | ❌ |
+
+### DeepSeek Models
+| Model | Context | Max Output | Reasoning |
+|------|--------|----------|------|
+| DeepSeek V3.2 | 128K | 32K | ❌ |
+| DeepSeek R1 | 98K | 16K | ✅ |
+
+### GLM Models
+| Model | Context | Max Output | Reasoning |
+|------|--------|----------|------|
+| GLM-4.7 | 200K | 128K | ❌ |
+
+### Kimi Models
+| Model | Context | Max Output | Reasoning |
+|------|--------|----------|------|
+| Kimi K2 Thinking | 256K | 32K | ✅ |
 
 ## Installation
 
@@ -38,7 +54,9 @@ pi update
 
 ## API Endpoint
 
-This extension uses the EU West endpoint: `https://ark.eu-west.bytepluses.com/api/v3`
+This extension uses the **AP Southeast** endpoint: `https://ark.ap-southeast.bytepluses.com/api/v3`
+
+> ⚠️ Note: The EU West endpoint (`ark.eu-west.bytepluses.com`) does not accept this API key. Use AP Southeast only.
 
 ## License
 
