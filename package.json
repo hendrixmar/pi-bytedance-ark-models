@@ -1,0 +1,33 @@
+{
+  "name": "pi-bytedance-ark-models",
+  "version": "1.0.0",
+  "description": "Adds ByteDance Ark models (Doubao, Seed, DeepSeek) to pi with OAuth support",
+  "keywords": [
+    "pi-package",
+    "bytedance",
+    "ark",
+    "doubao",
+    "seed",
+    "deepseek",
+    "models",
+    "oauth"
+  ],
+  "type": "module",
+  "main": "./index.ts",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "files": [
+    "index.ts",
+    "README.md",
+    "package-lock.json"
+  ],
+  "license": "MIT",
+  "author": "Hendrik Martina <hendrikmartina@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hendrixmar/pi-bytedance-ark-models.git"
+  }
+}
