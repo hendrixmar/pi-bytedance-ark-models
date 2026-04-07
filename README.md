@@ -1,34 +1,36 @@
 # Pi ByteDance Ark Models
 
-Adds ByteDance Ark **Seed**, **DeepSeek**, **GLM**, and **Kimi** models to Pi via the AP Southeast endpoint.
+Adds ByteDance Ark **Doubao Seed**, **MiniMax**, **GLM**, **DeepSeek**, and **Kimi** models to Pi via the AP Southeast endpoint.
 
 ## Available Models
 
-### Seed Models (Multimodal)
-| Model | Context | Max Output | Reasoning |
-|------|--------|----------|------|
-| Seed 2.0 Pro | 256K | 131K | ❌ |
-| Seed 2.0 Lite | 256K | 131K | ❌ |
-| Seed 2.0 Mini | 256K | 131K | ❌ |
-| Seed 1.8 | 256K | 65K | ❌ |
-| Seed 1.6 | 256K | 32K | ❌ |
-| Seed 1.6 Flash | 256K | 32K | ❌ |
+### Doubao Seed Models
+| Model | Context | Max Output | Reasoning | Multimodal |
+|------|--------|----------|------|------|
+| Doubao Seed 2.0 Pro | 256K | 131K | ❌ | ✅ |
+| Doubao Seed 2.0 Lite | 256K | 131K | ❌ | ✅ |
+| Doubao Seed 2.0 Code | 256K | 131K | ❌ | ❌ |
+| Doubao Seed Code | 256K | 131K | ❌ | ❌ |
 
-### DeepSeek Models
+### MiniMax Models
 | Model | Context | Max Output | Reasoning |
 |------|--------|----------|------|
-| DeepSeek V3.2 | 128K | 32K | ❌ |
-| DeepSeek R1 | 98K | 16K | ✅ |
+| MiniMax M2.5 | 256K | 131K | ❌ |
 
 ### GLM Models
 | Model | Context | Max Output | Reasoning |
 |------|--------|----------|------|
 | GLM-4.7 | 200K | 128K | ❌ |
 
+### DeepSeek Models
+| Model | Context | Max Output | Reasoning |
+|------|--------|----------|------|
+| DeepSeek V3.2 | 128K | 64K | ❌ |
+
 ### Kimi Models
 | Model | Context | Max Output | Reasoning |
 |------|--------|----------|------|
-| Kimi K2 Thinking | 256K | 32K | ✅ |
+| Kimi K2.5 | 256K | 64K | ❌ |
 
 ## Installation
 
