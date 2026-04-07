@@ -52,6 +52,8 @@ pi update
 
 > 💡 Get API key: [ByteDance Ark Console](https://console.bytepluses.com/)
 
+> ⚠️ **Important**: Models must be activated in the Ark Console before use. Visit the console and enable the models you want to use.
+
 ## API Endpoint
 
 This extension uses the **AP Southeast** endpoint: `https://ark.ap-southeast.bytepluses.com/api/v3`
