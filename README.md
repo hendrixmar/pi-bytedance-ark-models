@@ -56,9 +56,9 @@ pi update
 
 ## API Endpoint
 
-This extension uses the **AP Southeast** endpoint: `https://ark.ap-southeast.bytepluses.com/api/v3`
+This extension uses the **AP Southeast Coding** endpoint: `https://ark.ap-southeast.bytepluses.com/api/coding/v3`
 
-> ⚠️ Note: The EU West endpoint (`ark.eu-west.bytepluses.com`) does not accept this API key. Use AP Southeast only.
+> ⚠️ Note: The EU West endpoint (`ark.eu-west.bytepluses.com`) and standard AP Southeast endpoint do not accept this API key. Use the coding endpoint only.
 
 ## License
 

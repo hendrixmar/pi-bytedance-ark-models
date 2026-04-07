@@ -190,7 +190,7 @@ function createApiKeyCredentials(apiKey: string): Promise<OAuthCredentials> {
 
 export default function registerByteDanceArkProvider(pi: ExtensionAPI): void {
 	pi.registerProvider("ByteDance Ark", {
-		baseUrl: "https://ark.ap-southeast.bytepluses.com/api/v3",
+		baseUrl: "https://ark.ap-southeast.bytepluses.com/api/coding/v3",
 		api: "openai-completions",
 		models: BYTEDANCE_ARK_MODELS,
 		oauth: {
